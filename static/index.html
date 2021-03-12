@@ -93,12 +93,6 @@ function clearFrame() {
     }
 
 }
-    
-function updateWorld(data){
-    world=data;
-    drawNextFrame();
-    fill
-}
 
 // This actually draws the frame
 function renderFrame() {
@@ -260,16 +254,16 @@ mouse = (function() {
 // Add the application specific mouse listeners!
 //XXX: TODO Make these prettier!
 mouse.mousedowners.push(function(x,y,clicked,e) {
-    addEntityWithoutName({'x':x,'y':y,'colour':'#008000','radius':20});
+    addEntityWithoutName({'x':x,'y':y,'colour':'#FF0000','radius':10});
 });
 
 mouse.mouseuppers.push(function(x,y,clicked,e) {
-    addEntityWithoutName({'x':x,'y':y,'colour':'#0000FF','radius':20});
+    addEntityWithoutName({'x':x,'y':y,'colour':'#0000FF','radius':10});
 });
 
 mouse.mousedraggers.push(function(x,y,clicked,e) {
-    addEntityWithoutName({'x':x,'y':y,'colour':'#FF0000',
-                          'radius':20});
+    addEntityWithoutName({'x':x,'y':y,'colour':'#00FF00',
+                          'radius':10});
 });
 
 function update() {
@@ -283,7 +277,6 @@ function update() {
 
 // 30 frames per second
 setInterval( update, 1000/30.0);
-
 
 
     </script>
