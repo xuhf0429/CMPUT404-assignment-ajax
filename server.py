@@ -83,26 +83,26 @@ def update(entity):
     
     for key, value in info.items():
         myWorld.update(entity, key, value)
-    return json.dumps(myWorld.get(entity))
+    return flask.jsonify(myWorld.get(entity))
 
 @app.route("/world", methods=['POST','GET'])    
 def world():
     '''you should probably return the world here'''
     
-    response = json.dumps(myWorld.world())
+    response = flask.jsonify(myWorld.world())
     return response
 
 @app.route("/entity/<entity>")    
 def get_entity(entity):
     '''This is the GET version of the entity interface, return a representation of the entity'''
-    response = json.dumps(myWorld.get(entity))
+    response = flask.jsonify(myWorld.get(entity))
     return response
 
 @app.route("/clear", methods=['POST','GET'])
 def clear():
     '''Clear the world out!'''
     myWorld.clear()
-    return json.dumps(myWorld.world())
+    return flask.jsonify(myWorld.world())
 
 if __name__ == "__main__":
     app.run()
